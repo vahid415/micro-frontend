@@ -1,0 +1,119 @@
+.checkbox {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    /* Create the checkmark/indicator (hidden when not checked) */
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.checkmark:not(.active) {
+}
+
+input:disabled + .checkmark {
+  cursor: unset !important;
+  opacity: 0.7;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+input:indeterminate ~ .checkmark:after {
+  display: block;
+  left: 10px;
+  top: 4px;
+  width: 1px;
+  height: 17px;
+  transform: rotate(90deg);
+}
+
+input:indeterminate ~ .checkmark.sm:after {
+  left: 6px;
+  height: 13px;
+  top: 2px;
+}
+
+input:indeterminate ~ .checkmark.lg:after {
+  left: 14px;
+  height: 25px;
+  top: 4px;
+}
+
+.checkbox.sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.checkbox.md {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.checkbox.lg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.checkmark.sm {
+  height: 1rem;
+  width: 1rem;
+
+  &:after {
+    left: 4px;
+    top: 1px;
+    width: 0.5rem;
+    height: 0.75rem;
+  }
+}
+
+.checkmark.md {
+  height: 1.5rem;
+  width: 1.5rem;
+
+  &:after {
+    left: 8px;
+    top: 3px;
+    width: 0.5rem;
+    height: 1rem;
+  }
+}
+
+.checkmark.lg {
+  height: 2rem;
+  width: 2rem;
+
+  &:after {
+    left: 10px;
+    top: 3px;
+    width: 0.75rem;
+    height: 1.25rem;
+  }
+}

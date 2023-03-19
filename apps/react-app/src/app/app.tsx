@@ -1,12 +1,16 @@
+import RoutesHook from "./router";
+import {MuiGlobal} from "./theme/mui-global";
+import {Suspense} from "react";
 
-import NxWelcome from './nx-welcome';
 
 export function App() {
-  return (
-    <>
-      <NxWelcome title="react-app" />
-    </>
-  );
+    return (
+            <MuiGlobal>
+                <Suspense fallback={<span>has error</span>}>
+                    <RoutesHook/>
+                </Suspense>
+            </MuiGlobal>
+    );
 }
 
 export default App;

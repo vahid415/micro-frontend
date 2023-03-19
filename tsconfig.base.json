@@ -16,8 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "ng-element": ["packages/ng-element/src/index.ts"],
       "ng-features": ["packages/ng-features/src/index.ts"],
-      "rc-features": ["packages/rc-features/src/index.ts"],
+      "rc-features": ["packages/rc-features/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

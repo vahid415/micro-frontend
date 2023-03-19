@@ -12,6 +12,7 @@
     "@angular/common": "~15.2.0",
     "@angular/compiler": "~15.2.0",
     "@angular/core": "~15.2.0",
+    "@angular/elements": "^15.2.3",
     "@angular/forms": "~15.2.0",
     "@angular/material": "^15.2.3",
     "@angular/platform-browser": "~15.2.0",
@@ -24,6 +25,7 @@
     "@mui/x-data-grid-pro": "^6.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.9.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
