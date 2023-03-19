@@ -1,0 +1,45 @@
+<div class="root-container">
+    <h2>Angular component (bidirectional data binding):</h2>
+
+    <button class="user" mat-raised-button color="primary" (click)="openDialog()">ADD New User</button>
+
+    <table mat-table [dataSource]="users$ | async" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Age Column -->
+        <ng-container matColumnDef="age">
+            <th mat-header-cell *matHeaderCellDef> Age</th>
+            <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="actions">
+            <th data-testid="actions" mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let item">
+                <div class="c-rowActions">
+                    <button mat-icon-button color="primary" (click)="addAge(item.id)">
+                        <mat-icon fontIcon="plus_one"></mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="delete(item.id)">
+                        <mat-icon fontIcon="delete" ></mat-icon>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
